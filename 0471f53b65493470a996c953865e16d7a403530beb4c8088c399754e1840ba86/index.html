@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Validation test PCR COVID-19</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #9c9c9c;
+                font-weight: 400;
+                font-family: OpenSansRegular,Arial, sans-serif;
+                height: 100vh;
+            }
+            img {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pdf-container">
+            <div class="pdf-tooltip">
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
+                &nbsp; &nbsp;
+                <span>Page: <span id="page_num">1</span> / <span id="page_count">2</span></span>
+            </div>
+            <div id="pdf-wrapper">
+                <img class="result-img" src="page-1.png?=1" />
+            </div>
+        </div>
+        <script>
+            document.querySelector('#next').addEventListener('click', function() {
+                document.querySelector('#page_num').innerHTML = '2';
+                document.querySelector('.result-img').src = 'page-2.png';
+            });
+
+            document.querySelector('#prev').addEventListener('click', function() {
+                document.querySelector('#page_num').innerHTML = '1';
+                document.querySelector('.result-img').src = 'page-1.png';
+            });
+        </script>
+    </body>
+</html>
